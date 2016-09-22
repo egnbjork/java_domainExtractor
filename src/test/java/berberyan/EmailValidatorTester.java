@@ -7,6 +7,20 @@ import org.junit.Test;
 public class EmailValidatorTester {
 	
 	@Test
+	public void test_validate_empty_string(){
+		String email = "";
+		boolean emailIsValid = ValidateEmail.isValid(email);
+		assertFalse(emailIsValid);	
+	}
+	
+	@Test
+	public void test_validate_string_with_spaces_only(){
+		String email = "";
+		boolean emailIsValid = ValidateEmail.isValid(email);
+		assertFalse(emailIsValid);	
+	}
+	
+	@Test
 	public void test_valid_email(){
 		String email = "some@gmail.com";
 		boolean emailIsValid = ValidateEmail.isValid(email);
