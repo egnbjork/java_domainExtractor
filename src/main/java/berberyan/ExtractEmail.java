@@ -1,9 +1,10 @@
 package berberyan;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ExtractEmail 
 {
@@ -18,6 +19,6 @@ public class ExtractEmail
     				.map(n->n.substring(n.indexOf("@"), n.length()))
     				.distinct()
     				.sorted()
-    				.collect(Collectors.toList());
+    				.collect(toList());
     }
 }
