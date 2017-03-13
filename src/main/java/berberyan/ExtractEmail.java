@@ -8,17 +8,20 @@ import java.util.List;
 
 public class ExtractEmail 
 {
-    public static List<String> getDomains(String emails){
-    		if(emails.isEmpty()){
-    			return new ArrayList<String>();
-    		}
-    		
-    		return Arrays
-    				.stream(emails.trim().split(", "))
-    				.filter(ValidateEmail::isValid)
-    				.map(n->n.substring(n.indexOf("@"), n.length()))
-    				.distinct()
-    				.sorted()
-    				.collect(toList());
-    }
+
+	private ExtractEmail() {}
+
+	public static List<String> getDomains(String emails){
+		if(emails.isEmpty()){
+			return new ArrayList<>();
+		}
+
+		return Arrays
+				.stream(emails.trim().split(", "))
+				.filter(ValidateEmail::isValid)
+				.map(n->n.substring(n.indexOf('@'), n.length()))
+				.distinct()
+				.sorted()
+				.collect(toList());
+	}
 }
